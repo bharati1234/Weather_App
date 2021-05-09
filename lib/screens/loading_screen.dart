@@ -18,11 +18,11 @@ class _LoadingScreenState extends State<LoadingScreen> {
   }
 
   void getLocationData() async {
-    // WeatherModel weatherModel = WeatherModel();
+    WeatherModel weatherModel = WeatherModel();
     // var weatherData = WeatherModel().getLocationWeather();
     dynamic weatherData;
     try {
-      weatherData = await Future.value(WeatherModel().getLocationWeather())
+      weatherData = await Future.value(weatherModel.getLocationWeather())
           .timeout(const Duration(seconds: 5));
     } catch (e) {
       print('Failed to get data by $e');
